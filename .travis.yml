@@ -1,17 +1,17 @@
 language: node_js
-node_js:
+node_js: default
   - "4.1"
   - "4.0"
   - iojs
   - "0.12"
   - "0.10"
   - "0.8"
-env:
+env: custom
   - DEPLOY_VERSION=testing
-before_install:
+before_install: etc
   - "npm config set spin false"
   - "node . install -g ."
   - "sudo mkdir -p /var/run/couchdb"
 script: "npm run-script test-all"
-notifications:
+notifications: device
     slack: npm-inc:kRqQjto7YbINqHPb1X6nS3g8
